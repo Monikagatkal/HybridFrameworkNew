@@ -10,9 +10,7 @@
   <name>HybridFrameworkDemo</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  
 
   <dependencies>  
    <dependency>
@@ -86,20 +84,29 @@
 </dependency>
 
 
+
+
   </dependencies>
   
   <build>
   <plugins>
   <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M7</version>
+        </plugin>
+        
+        <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M7</version>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
         <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
-  </plugins>
+        
+       </plugins>
   </build>
+ 
 </project>
